@@ -1,0 +1,433 @@
+<!--
+theteam.HTML
+
+Information about the creators of serenity
+
+HTML by Delsin Zhang, modified by Kos Grillis to suit theteam.html
+Carousel by Kos Grillis
+
+INFO30005 sem1 2016, The Cool Doves
+-->
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Serenity</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+	    <link href="assets/css/secondary.css" rel="stylesheet"/>
+	    <script src="./assets/scripts/master.js"></script>
+		<script src="./assets/scripts/carousel.js"></script>
+	</head>
+        <body class="homepage">
+    		<div id="page-wrapper">
+    			<!-- Header -->
+    			<div id="header">
+    				<!-- Inner -->
+    				<div class="inner">
+						<div style="padding-bottom:20px">
+							<img id="logoo" src="./assets/images/logo.png" height="130" width="120"></img>
+							<hr/>
+						</div>
+						<input checked id="one" name="multiples" type="radio" value="1" class="not-visible">
+        				<label for="one" class="not-visible">1</label>
+        				<input id="two" name="multiples" type="radio" value="2" class="not-visible">
+        				<label for="two" class="not-visible">2</label>
+        				<input id="three" name="multiples" type="radio" value="3" class="not-visible">
+        				<label for="three" class="not-visible">3</label>
+        				<input id="four" name="multiples" type="radio" value="4" class="not-visible">
+        				<label for="four" class="not-visible">4</label>
+        				<input id="five" name="multiples" type="radio" value="5" class="not-visible">
+        				<label for="five" class="not-visible">5</label>
+        				<input id="six" name="multiples" type="radio" value="6" class="not-visible">
+        				<label for="six" class="not-visible">6</label>
+        				<input id="seven" name="multiples" type="radio" value="7" class="not-visible">
+        				<label for="seven" class="not-visible">7</label>
+        				<input id="eight" name="multiples" type="radio" value="8" class="not-visible">
+        				<label for="eight" class="not-visible" style="margin-bottom:30px">8</label>
+						<div class="carousel-loader" style="display:none;">
+							<img src="./assets/images/ajax-loader.gif"/>
+						</div>
+        				<div class="carousel-container">
+            				<div class="member-carousel"></div>
+        				</div>
+        				<div style="visibility:visible;">
+            				<a onclick="load();" class="button circled scrolly">Say hi!</a>
+        				</div>
+    				</div>
+
+    				<!-- Nav -->
+    				<nav id="nav">
+    					<ul>
+    						<li><a class='not-visible'>INVISIBLE</a></li>
+                            <li><a href="index.html">HOME</a></li>
+                            <li><a href="#contact">GET IN TOUCH</a></li>
+                            <li><a class='not-visible'>INVISIBLE</a></li>
+    					</ul>
+    				</nav>
+    			</div>
+
+    			<!-- Who -->
+    			<div class="wrapper style1">
+    				<article id="Hamza info" class="container special">
+    					<header>
+    						<h1><strong>Hamza Shahid</strong></h1>
+                            <img style='margin-bottom: 10px' src="./assets/images/MemberAvatars/Hamza.png" height="200" width="200">
+    						<h2>-<em>The boss</em></h2>
+                            <p>
+                                What the team has to say:
+                            </p>
+							<ul class="divided">
+								<li>
+									<h4>"The worriless"</h4>
+								</li>
+								<li>
+									<h4>"Pulled all-nighters to get our shit done and still found time to go to hanging rock"</h4>
+								</li>
+								<li>
+									<h4>"The ‘genius’ that forgot parseInt **which took 5h to find**, but still a genius"</h4>
+								</li>
+								<li>
+									<h4>"Managed to seek out and put together an insanely good group of people"</h4>
+								</li>
+								<li>
+									<h4>"We’ve all wanted to kill you at least 3 times over the course of this semester tbh"</h4>
+								</li>
+								<li>
+									<h4>"You’re better than the other group’s leader though"</h4>
+								</li>
+								<li>
+									<h4>"He can cook (meth) pretty fucking well"</h4>
+								</li>
+							</ul>
+    					</header>
+                        <footer>
+
+    					</footer>
+    				</article>
+    			</div>
+
+                <div class="wrapper style1">
+    				<article id="Caiti info" class="container special">
+    					<header>
+    						<h1><strong>Caiti Wade</strong></h1>
+                            <img style='margin-bottom: 10px' src="./assets/images/MemberAvatars/Caiti.png" height="200" width="200">
+    						<h2>-<em><del>Worst ideas ever</del></em></h2>
+							<p>
+                                What the team has to say:
+                            </p>
+							<ul class="divided">
+								<li>
+									<h4>"The shut the fuck up"</h4>
+								</li>
+								<li>
+									<h4>"Talkative, even when speaking to herself"</h4>
+								</li>
+								<li>
+									<h4>"If you stacked up the lines of code for serenity, it would still be taller than her"</h4>
+								</li>
+								<li>
+									<h4>"If she could code as much as she could talk we would have smashed this assignment out in the first 3 weeks"</h4>
+								</li>
+								<li>
+									<h4>"Super bright and happy person, powered through presentation even though her knee was busted"</h4>
+								</li>
+								<li>
+									<h4>"Can compete with eminem while eating m&m’s"</h4>
+								</li>
+								<li>
+									<h4>"Bossy"</h4>
+								</li>
+							</ul>
+    					</header>
+                        <footer>
+
+    					</footer>
+    				</article>
+    			</div>
+
+                <div class="wrapper style1">
+    				<article id="Claudio info" class="container special">
+    					<header>
+    						<h1><strong>Claudio Gonzalez Garcia</strong></h1>
+                            <img style='margin-bottom: 10px' src="./assets/images/memberAvatars/Claudio.png" height="200" width="200">
+    						<h2>-<em>Has the best name we've ever seen</em></h2>
+							<p>
+                                What the team has to say:
+                            </p>
+							<ul class="divided">
+								<li>
+									<h4>"The datababe"</h4>
+								</li>
+								<li>
+									<h4>"Have a cool name, but he is also pretty cool with the database stuff"</h4>
+								</li>
+								<li>
+									<h4>"Head of <b>datababes</b>"</h4>
+								</li>
+								<li>
+									<h4>"Randomly went MIA then came back with brilliant algorithms"</h4>
+								</li>
+								<li>
+									<h4>"HOT accent"</h4>
+								</li>
+								<li>
+									<h4>"Eyebrows on point. Tbh everything on point. He’s really just a walking point."</h4>
+								</li>
+								<li>
+									<h4>"Please leave the sandals at home and wear some proper shoes"</h4>
+								</li>
+							</ul>
+    					</header>
+                        <footer>
+
+    					</footer>
+    				</article>
+    			</div>
+
+                <div class="wrapper style1">
+    				<article id="Delsin info" class="container special">
+    					<header>
+    						<h1><strong>Delsin Zhang</strong></h1>
+                            <img style='margin-bottom: 10px' src="./assets/images/memberAvatars/Delsin.png" height="200" width="200">
+    						<h2>-<em>A voice that rivals even Morgan Freemans</em></h2>
+							<p>
+                                What the team has to say:
+                            </p>
+							<ul class="divided">
+								<li>
+									<h4>"Could drop out and get picked up by major web dev firm"</h4>
+								</li>
+								<li>
+									<h4>"Pretty sure we are inside the Animus"</h4>
+								</li>
+								<li>
+									<h4>"Avatar, the legend of CSS and HTML element bender"</h4>
+								</li>
+								<li>
+									<h4>"The real MVP of frontend"</h4>
+								</li>
+								<li>
+									<h4>"My friend thinks he has a cool name, kinda reminds me of dolphins"</h4>
+								</li>
+								<li>
+									<h4>"That voice is actually amazing"</h4>
+								</li>
+								<li>
+									<h4>"Great eye for website design"</h4>
+								</li>
+								<li>
+									<h4>"Sir Delsin Attenborough Freeman"</h4>
+								</li>
+							</ul>
+    					</header>
+                        <footer>
+
+    					</footer>
+    				</article>
+    			</div>
+
+                <div class="wrapper style1">
+    				<article id="Frank info" class="container special">
+    					<header>
+    						<h1><strong>Frank Huang</strong></h1>
+                            <img style='margin-bottom: 10px' src="./assets/images/memberAvatars/Frank.png" height="200" width="200">
+    						<h2>-<em>We're pretty sure he's a genius</em></h2>
+							<p>
+                                What the team has to say:
+                            </p>
+							<ul class="divided">
+								<li>
+									<h4>"Silent but deadly at code"</h4>
+								</li>
+								<li>
+									<h4>"Dude, don’t be too salty, just relax and everything should be fine"</h4>
+								</li>
+								<li>
+									<h4>"Showed us all how to use emojis"</h4>
+								</li>
+								<li>
+									<h4>"I wish I had as much Armani Exchange as you Frank"</h4>
+								</li>
+								<li>
+									<h4>"Quiet but a hard worker"</h4>
+								</li>
+								<li>
+									<h4>"One-emoji-man, rival of One-punch-man, brother of One-pun-man"</h4>
+								</li>
+							</ul>
+    					</header>
+                        <footer>
+
+    					</footer>
+    				</article>
+    			</div>
+
+                <div class="wrapper style1">
+    				<article id="Glory info" class="container special">
+    					<header>
+    						<h1><strong>Glory Gwiguno</strong></h1>
+                            <img style='margin-bottom: 10px' src="./assets/images/MemberAvatars/Glory.png" height="200" width="200">
+    						<h2>-<em>The resident artist</em></h2>
+							<p>
+                                What the team has to say:
+                            </p>
+							<ul class="divided">
+								<li>
+									<h4>"The glory-ous"</h4>
+								</li>
+								<li>
+									<h4>"Dependent on caffeine"</h4>
+								</li>
+								<li>
+									<h4>"Seemed to be confused with everything"</h4>
+								</li>
+								<li>
+									<h4>"Smashed out backend shit when everything was broken"</h4>
+								</li>
+								<li>
+									<h4>"His hair is nearly as glory-ous as his name amirite"</h4>
+								</li>
+								<li>
+									<h4>"Drew amazing bird avatars"</h4>
+								</li>
+								<li>
+									<h4>"Great eye for drawing logos ← but then tells the group he can’t draw even though we all know that’s shit"</h4>
+								</li>
+								<li>
+									<h4>"Keep pinning, just keep keep pinning on posts"</h4>
+								</li>
+								<li>
+									<h4>"The logos were his best work"</h4>
+								</li>
+							</ul>
+    					</header>
+                        <footer>
+
+    					</footer>
+    				</article>
+    			</div>
+
+                <div class="wrapper style1">
+    				<article id="Laura info" class="container special">
+    					<header>
+    						<h1><strong>Laura Lin</strong></h1>
+                            <img style='margin-bottom: 10px' src="./assets/images/memberAvatars/Laura.png" height="200" width="200">
+    						<h2>-<em>Thinks we're all crazy</em></h2>
+							<p>
+                                What the team has to say:
+                            </p>
+							<ul class="divided">
+								<li>
+									<h4>"A busy one, but hard working"</h4>
+								</li>
+								<li>
+									<h4>"Says she can’t code then does some of the best HTML for the site"</h4>
+								</li>
+								<li>
+									<h4>"Also best fashion of the entire group by far, soz not soz everyone else"</h4>
+								</li>
+								<li>
+									<h4>"Pretty much perfect"</h4>
+								</li>
+								<li>
+									<h4>"Fashionista among fashiondisasta"</h4>
+								</li>
+								<li>
+									<h4>"Caiti should take notes from Laura #rude #buttrue #iaintevenmad"</h4>
+								</li>
+							</ul>
+    					</header>
+                        <footer>
+
+    					</footer>
+    				</article>
+    			</div>
+
+                <div class="wrapper style1">
+    				<article id="Kos info" class="container special">
+    					<header>
+    						<h1><strong>Kos Grillis</strong></h1>
+                            <img style='margin-bottom: 10px' src="./assets/images/memberAvatars/Kos.png" height="200" width="200">
+    						<h2>-<em>We're not really sure what he does yet</em></h2>
+							<p>
+                                What the team has to say:
+                            </p>
+							<ul class="divided">
+								<li>
+									<h4>"One who reacted to React in a relatively best reaction."</h4>
+								</li>
+								<li>
+									<h4>"Mitchell’s favourite - because of the carousel."</h4>
+								</li>
+								<li>
+									<h4>"Don’t tell him, but he’s actually pretty funny."</h4>
+								</li>
+								<li>
+									<h4>"Honest. Just kos."</h4>
+								</li>
+								<li>
+									<h4>"His owl looks weirdly like him. Makes me a bit uncomfortable actually."</h4>
+								</li>
+								<li>
+									<h4>"Made an awesome carousel."</h4>
+								</li>
+								<li>
+									<h4>"Yes, he did."</h4>
+								</li>
+								<li>
+									<h4>"Should probably have an entire carousel dedicated to him."</h4>
+								</li>
+								<li>
+									<h4>"Kos stole my lunch everyday when we were little."</h4>
+								</li>
+								<li>
+									<h4>"^^ wtf kos"</h4>
+								</li>
+								<li>
+									<h4>"Kos is plotting something, I know that."</h4>
+								</li>
+								<li>
+									<h4>Hello, Kos from earth-2!</h4>
+								</li>
+							</ul>
+    					</header>
+                        <footer>
+
+    					</footer>
+    				</article>
+    			</div>
+
+    			<!-- Footer -->
+    			<div id="footer">
+    				<!-- Contact -->
+    				<section id="contact" class="contact">
+    					<header>
+    						<h3>Drop by and say hi!</h3>
+    					</header>
+    					<p>(Pro Tip: We don't bite.)</p>
+    					<ul class="icons">
+    						<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+    						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+    						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+    					</ul>
+    				</section>
+
+    				<!-- Copyright -->
+    				<div class="copyright">
+    					<ul class="menu">
+    						<li>&copy; The Cool Doves. All rights reserved.</li>
+    					</ul>
+    				</div>
+    			</div>
+    		</div>
+    </body>
+</html>

@@ -1,0 +1,156 @@
+#profile {
+
+  position: fixed;
+
+  right: 80%;
+}
+
+#feed-container{
+  left: 17%;
+}
+#sidepanel {
+  position: fixed;
+
+  left: 73%;
+  top: 12%;
+}
+#messenger-profile-pic{
+  width:70%;
+  height:70%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: grey;
+}
+#messenger-user-panel{
+  padding: 10px;
+  height: 700px;
+  border-style: solid hidden solid solid;
+  border-width: 1px;
+  border-color: grey;
+}
+#messenger-panel{
+  padding:10px;
+  height: 700px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: grey;
+}
+#messages-feed{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 500px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: grey;
+}
+#post-message{
+  padding-top: 10px;
+  height: 120px;
+  border-style: hidden solid solid solid;
+  border-width: 1px;
+  border-color: grey;
+}
+
+
+}
+
+
+
+.message{
+  postion:absolute;
+  top:50%;
+  width:100%;
+}
+img.profilepic{
+  width: 5%;
+  height: 5%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: grey;
+
+}
+span.username{
+  padding-left: 5px;
+}
+
+#left-panel-btn {
+    text-align: center;
+}
+
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+a:link {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #55acee;
+    text-decoration: none;
+}
+
+a:active {
+    color: #55acee;
+    text-decoration: none;
+}
+ .navbar {
+     border-color: #55acee;
+     background-color: #55acee;
+ }
+ .nav {
+     border-color: #55acee;
+     background-color: #55acee;
+ }
+
+ .active {
+     color: #55acee;
+ }
+ .active > a {
+     background-color: #55acee;
+ }
+
+ .navbar-inverse .navbar-nav>.active>a,
+ .navbar-inverse .navbar-nav>.active>a:focus,
+ .navbar-inverse .navbar-nav>.active>a:hover {
+     background-color: #55acee;
+     font-size: 30px;
+ }
+
+ .navbar-inverse .navbar-nav>.active>a:hover {
+     color: #C7EEFF;
+ }
+
+ .navbar-inverse .navbar-nav>li>a {
+     color: white;
+ }
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: #C7EEFF;
+}
+
+.btn {
+    border-color: 0 none;
+}
+
+.btn-default, .btn-default:focus {
+    background-color: #55acee;
+    color: white;
+}
+
+.btn-default:active {
+    background-color: #55acee !important;
+    color: white !important;
+}
+.btn-default:hover {
+    background-color: #C7EEFF;
+    color: white;
+}
+
+.progress {background: rgba(200, 210, 230, 1); border: 5px solid rgba(242, 237, 237, 1); border-radius: 25px; height: 40px;}
+.progress-bar-custom {
+    background: rgba(142, 199, 104, 1);
+    font-size: 15px;
+}

@@ -1,0 +1,152 @@
+<!--
+index.HTML
+
+The first page a user will see when navigating to serenity
+
+HTML by Delsin Zhang, modifications by Kos Grillis
+
+INFO30005 sem1 2016, The Cool Doves
+-->
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Serenity</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="assets/bootstrap-datepicker-1.5.1-dist/css/bootstrap-datepicker.css"/>
+	    <link href="assets/css/secondary.css" rel="stylesheet"/>
+	    <script src=".assets/scripts/master.js"></script>
+		<script type="text/javascript">
+			$(function () {
+				$('[data-toggle="tooltip"]').tooltip()
+			});
+		</script>
+	</head>
+
+	<body class="homepage">
+		<div id="page-wrapper">
+			<!-- Header -->
+			<div id="header">
+				<!-- Inner -->
+				<div class="inner" id="app">
+
+				</div>
+
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">HOME</a></li>
+						<li><a href="#who">WHO WE ARE</a></li>
+						<li><a href="#what">WHAT WE DO</a></li>
+						<li><a href="#contact">GET IN TOUCH</a></li>
+					</ul>
+				</nav>
+			</div>
+
+			<!-- Who -->
+			<div class="wrapper style1">
+				<article id="who" class="container special">
+					<header>
+						<h2>Sup. We are <strong><a href="#">The Cool Doves</a></strong>.</h2>
+						<p>
+							We are probably the coolest doves you've ever encountered. We enjoy wearing sunglasses in the darkest night.
+							So now you know how cool we are. #thuglife
+						</p>
+					</header>
+					<footer>
+						<img style='margin-bottom: 10px' src="./assets/images/mascot.png" height="200" width="170">
+						<div style='margin-top: 10px'>
+							<a href="./theteam.html" class="button">Meet the team</a>
+						</div>
+					</footer>
+				</article>
+			</div>
+
+			<!-- Main -->
+			<div class="wrapper style1">
+				<article id="what" class="container special">
+					<header>
+						<h2><a href="#">So what is Serenity?</a></h2>
+						<p>
+							hufhuehfuehrfuerhfiuerhfieurhfieuhfieurhf
+							fieuhifuheifuheruhf
+							ferferferferferferferferferfref
+							erferfrwfrwfwerfewferferferferfref
+						</p>
+					</header>
+					<footer>
+						<div>
+							<span data-toggle="tooltip" data-placement="bottom" title="Click here to find out more about how Serenity handles your privacy"><a href="#" class="button" data-toggle="modal" data-target="#myModal">Privacy</a></span>
+						</div>
+					</footer>
+				</article>
+			</div>
+
+			<!-- Footer -->
+			<div id="footer">
+				<!-- Contact -->
+				<section id="contact" class="contact">
+					<header>
+						<h3>Drop by and say hi!</h3>
+					</header>
+					<p>(Pro Tip: We don't bite.)</p>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+					</ul>
+				</section>
+
+				<!-- Copyright -->
+				<div class="copyright">
+					<ul class="menu">
+						<li>&copy; The Cool Doves. All rights reserved.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  			<div class="modal-dialog" role="document">
+    			<div class="modal-content">
+      				<div class="modal-header">
+        				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        				<h4 class="modal-title" id="myModalLabel">Privacy</h4>
+      				</div>
+      				<div class="modal-body">
+        				Here we can have stuff about Serenity and privacy.
+						<br/>
+						We know privacy is important. It's important to us to.
+						<br/>
+						Did you know facebook records conversations?
+						<br/>
+						None  of that here at SERENITY.
+						<br/>
+						Serenity has amazing privacy!
+						<br/>
+						You are fully anonymous!
+      				</div>
+	      			<div class="modal-footer">
+        				<button type="button" class="btn btn-default" data-dismiss="modal">Dismiss</button>
+      				</div>
+    			</div>
+  			</div>
+		</div>
+
+		<script src="./assets/scripts/bundle.js"></script>
+		<script type="text/javascript" src="assets/bootstrap-datepicker-1.5.1-dist/js/bootstrap-datepicker.js">
+	        $('#sandbox-container input').datepicker({
+	            format: "dd/mm/yyyy"
+	        });
+	    </script>
+	</body>
+</html>

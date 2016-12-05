@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <title>Serenity</title>
+  <link href="css/root.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/plugins.js"></script>
+  </head>
+  <body>
+ <!-- //////////////////////////////////////////////////////////////////////////// -->
+  <!-- START TOP -->
+  <div id="top" class="clearfix">
+      <!-- Start App Logo -->
+      <div class="applogo">
+      <a href='http://104.236.121.170:3000/Profile' class="logo">Serenity</a>
+      </div>
+      <!-- End App Logo -->
+
+
+  </div>
+  <!-- END TOP -->
+ <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+<!-- START SIDEBAR -->
+<div class="sidebar clearfix">
+
+<ul class="sidebar-panel nav">
+  <li class="sidetitle">TASKS</li>
+  <li><a href='http://104.236.121.170:3000/moderator'><span class="icon"><i class="fa fa-exclamation-circle"></i></span>Unresolved<span id='num_unre'class="label label-default"></span></a></li>
+  <li><a href='#' onclick = 'getResolved()'><span class="icon"><i class="fa fa-check-circle"></i></span>Resolved</a></li>
+</ul>
+
+</div>
+<!-- END SIDEBAR -->
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+
+ <!-- //////////////////////////////////////////////////////////////////////////// -->
+<!-- START CONTENT -->
+<div class="content">
+
+  <!-- Start Page Header -->
+  <div class="page-header">
+    <h1 id = 'resolve_title'class="title">Under Review</h1>
+      <ol class="breadcrumb">
+        <li class="active">These posts are now at your mercy.</li>
+      </ol>
+    <!-- Start Page Header Right Div -->
+    <div class="right">
+      <div class="btn-group" role="group" aria-label="...">
+        <a href="http://104.236.121.170:3000/moderator" class="btn btn-light"><i class="fa fa-refresh"></i></a>
+      </div>
+    </div>
+    <!-- End Page Header Right Div -->
+  </div>
+  <!-- End Page Header -->
+
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+<!-- START CONTAINER -->
+<div class="container-no-padding">
+
+    <!-- Start Social Content -->
+    <div class="social-content clearfix">
+      <!-- Start Single Post -->
+      <div id='postCon'class="col-md-12">
+<script type='text/javascript'>
+
+
+
+function getUnresolved(){
+	document.getElementById('resolve_title').innerHTML = 'Unresolved Post';
+	var du;//data unresolved
+	var postby = new Array();
+	var ids = new Array();
+	var url_unre = 'http://104.236.121.170:3000/api/unresolved';
+	console.log('func unresolved');
+	$.ajax({
+			type:"get",
+			url: url_unre,
+			processData: false,
+	}).done(function(data) {
+		console.log(data);
+		du = data;
+		var count = 0;
+		for(;count < data.length;count++){
+			var id = data[count].p._id;
+			ids.push(id);
+			var domain = 'http://104.236.121.170:3000';
+			var content = data[count].p.properties.Content;
+			$.ajax({
+					type:"get",
+					url: 'http://104.236.121.170:3000/api/getPoster',
+					data:"postId="+du[count].p._id,
+					processData: false,
+				}).done(function(data) {
+				console.log(data[0].u.properties.UserName);
+				postby.push(data[0].u.properties.UserName);
+				if(postby.length == du.length){
+					var i;
+					for(i = 0;i < postby.length;i++){
+						$('#postCon').append('<div class="panel panel-default"><div class="panel-body status"><div class="who clearfix"><img src="img/user3.png" alt="img"><span class="name"><b>'+postby[i]+'</b></span></div><div class="text">'+du[i].p.properties.Content+'</div><ul class="links"><li><a href="#" id="approve" onclick="approve('+ids[i]+')"><i class="fa fa-check"></i> Approve</a></li><li><a href="#" id="ban" onclick="ban('+ids[i]+')"><i class="fa fa-ban"></i> Delete</a></li></ul></div></div>');
+					}					
+				}
+			});
+			console.log(id);
+			console.log(content);
+		}
+	});
+}
+
+function approve(id){
+	console.log('approving '+id);
+	$.ajax({
+			type:"post",
+			url: 'http://104.236.121.170:3000/api/resolve',
+			data:"id="+id,
+			processData: false,
+		}).done(function(data) {
+		console.log(data);
+		$('#postCon').empty();
+		getUnresolved();
+	});
+}
+
+function ban(id){
+	console.log('baning '+id);
+	$.ajax({
+			type:"post",
+			url: 'http://104.236.121.170:3000/api/resolveBan',
+			data:"id="+id,
+			processData: false,
+		}).done(function(data) {
+		console.log(id);
+		$.ajax({
+            type:"DELETE",
+            beforeSend: function(request) {
+                request.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+            },
+            url: "http://104.236.121.170:3000/api/posting",
+            data:"postId="+id,
+            processData: false,
+            success: function(msg){
+                console.log(msg)
+				$('#postCon').empty();
+				getUnresolved();
+            }
+        })
+	});
+}
+
+function getResolved(){
+	document.getElementById('resolve_title').innerHTML = 'Resolved Post';
+	$('#postCon').empty();
+	var du;//data unresolved
+	var postby = new Array();
+	var ids = new Array();
+	console.log('func getResolved');
+	var url_unre = 'http://104.236.121.170:3000/api/resolved';
+	$.ajax({
+			type:"get",
+			url: url_unre,
+			processData: false,
+	}).done(function(data) {
+		console.log(data);
+		du = data;
+		var count = 0;
+		for(;count < data.length;count++){
+			var id = data[count].p._id;
+			ids.push(id);
+			var domain = 'http://104.236.121.170:3000';
+			var content = data[count].p.properties.Content;
+			$.ajax({
+					type:"get",
+					url: 'http://104.236.121.170:3000/api/getPoster',
+					data:"postId="+du[count].p._id,
+					processData: false,
+				}).done(function(data) {
+				console.log(data[0].u.properties.UserName);
+				postby.push(data[0].u.properties.UserName);
+				if(postby.length == du.length){
+					var i;
+					for(i = 0;i < postby.length;i++){
+						$('#postCon').append('<div class="panel panel-default"><div class="panel-body status"><div class="who clearfix"><img src="img/user3.png" alt="img"><span class="name"><b>'+postby[i]+'</b></span></div><div class="text">'+du[i].p.properties.Content+'</div></div></div>');
+					}					
+				}
+			});
+			console.log(id);
+			console.log(content);
+		}
+	});
+}
+
+
+
+(function($) {
+$(window).load(function(){
+	getUnresolved();
+})
+//s
+
+
+
+//e
+})(jQuery);
+</script>
+
+      </div>
+      <!-- End Single Post -->
+
+    </div>
+    <!-- End Social Content -->
+
+
+  </div>
+<!-- END CONTAINER -->
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+
+<!-- Start Footer -->
+<div class="row footer">
+  <div class="col-md-12 text-right">
+  <a href=#>Cool Doves</a> All rights reserved.
+  </div>
+</div>
+<!-- End Footer -->
+
+</div>
+<!-- End Content -->
+ <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Messenger</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!-- start navigation bar-->
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="">
+          <img src = "logo.png" alt = "Serenity" style = "width:50px;height:50px;">
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Serenity</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-comment" style="margin-right:4px;"></span>Messages</a></li>
+        </ul>
+        <form class="navbar-form navbar-right" role="search">
+          <div class="form-group input-group">
+            <input type="text" class="form-control" placeholder="Search..">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+            </span>
+          </div>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<!-- end navigation bar-->
+
+<!-- start left-panel-->
+<div class="container">
+  <div class="row">
+    <!-- start user container-->
+    <div id="messenger-user-panel" class="col-sm-4">
+    <div class="list-group">
+      <a href="#" class="list-group-item">
+        <div class="col-sm-4"><img id="messenger-profile-pic"src="icon-profile.png" class = "img-rounded" alt="img"></div>
+        <h3>username</h3></a>
+      <a href="#" class="list-group-item">
+        <div class="col-sm-4"><img id="messenger-profile-pic"src="icon-profile.png" class = "img-rounded" alt="img"></div>
+        <h3>username</h3></a>
+      <a href="#" class="list-group-item">
+        <div class="col-sm-4"><img id="messenger-profile-pic"src="icon-profile.png" class = "img-rounded" alt="img"></div>
+        <h3>username</h3></a>
+      <a href="#" class="list-group-item">
+        <div class="col-sm-4"><img id="messenger-profile-pic"src="icon-profile.png" class = "img-rounded" alt="img"></div>
+        <h3>username</h3></a>
+      </div>
+  </div>
+<!-- end left-panel-->
+
+<!-- start messenger-panel-->
+  <div id="messenger-panel" class="col-sm-8">
+    <!-- start username title-->
+  <h2 id="username-title" class="text-center">Username</h2>
+
+  <!-- start messages-feed -->
+    <div id="messages-feed" class="col-sm-12 text-center">
+
+      <div id="username-messages" class="col-sm-12">
+        <div class="col-sm-2"><img id="messenger-profile-pic"src="icon-profile.png" class = "img-rounded" alt="img">Name</div>
+        <div class="col-sm-7 well">blah blah blah</div>
+      </div>
+      <div id="my-messages" class="col-sm-12">
+        <div class="col-sm-offset-3 col-sm-7 well">blah blah blah</div>
+        <div class="col-sm-2"><img id="messenger-profile-pic"src="icon-profile.png" class = "img-rounded" alt="img">Name</div>
+      </div>
+      <div id="username-messages" class="col-sm-12">
+        <div class="col-sm-2"><img id="messenger-profile-pic"src="icon-profile.png" class = "img-rounded" alt="img">Name</div>
+        <div class="col-sm-7 well">blah blah blah</div>
+      </div>
+      <div id="my-messages" class="col-sm-12">
+        <div class="col-sm-offset-3 col-sm-7 well">blah blah blah</div>
+        <div class="col-sm-2"><img id="messenger-profile-pic"src="icon-profile.png" class = "img-rounded" alt="img">Name</div>
+      </div>
+    </div>
+  <!-- end messages-feed -->
+
+  <!-- start posting message box-->
+  <div id="post-message" class="form-group col-sm-12">
+    <div class="col-sm-9"><textarea class="form-control" rows="4" placeholder="send a message"></textarea></div>
+    <div class="col-sm-3"><input type="submit" class="btn btn-primary btn-lg" value="Send"></div>
+  </div>
+  <!-- end posting meassage box -->
+
+  </div>
+<!-- end messenger-panel-->
+
+
+
+</body>
+</html>

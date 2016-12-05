@@ -1,0 +1,195 @@
+/*
+carousel-style.css
+
+defines the interactive carousel
+
+Author: Kos Grillis
+
+INFO30005 sem1 2016, The Cool Doves
+*/
+
+/*
+Applies styles to the container class which houses the carousel
+*/
+.carousel-container {
+    width: 500px;
+    height: auto;
+    margin: 60px auto;
+    position:relative;
+    -webkit-perspective: 1000px; /*Gives the container a 3D space*/
+    -webkit-perspective-origin: 50% -25%; /*Where the 3d container is based on x and y*/
+    -webkit-transform: scale(1.2);
+    /*left:10px;*/
+}
+
+/*
+Height propery can be adjusted to change how much the elements at the back of
+the carousel can be seen.
+*/
+.member-carousel {
+    -webkit-transform-style: preserve-3d;
+    width: 500px;
+    height: 300px;
+    -webkit-transition: 1.5s;
+}
+
+/*Applies these styles to all div elements of the carousel*/
+.member-carousel div {
+    visibility: visible !important;
+    position: absolute;
+    opacity: .9;
+
+	/*
+	Defines the amount of time needed for all webkit transitions,
+	EG the time it takes for the carousel to transition in upon loading
+	EG the time it takes for a carousel element to pop "out" of the carousel upon being selected
+	*/
+    -webkit-transition: 1s;
+
+    width: 500;
+    height: auto;
+    background: rgba(203,203,203,0.5);
+	border-style: solid;
+    border-color: rgb(235, 198, 217);
+	text-align: center;
+}
+
+/*------------------------------------------------------------------------------
+Below gives the initial transforms to the div elements of the carousel
+div:nth-child(n) simply selects the (n)th child of .carousel that is a div element
+*/
+
+.member-carousel div:nth-child(1) {
+    -webkit-transform: translateZ(603.5px) scale(.95);
+}
+.member-carousel div:nth-child(2) {
+    -webkit-transform: rotateY(45deg) translateZ(603.5px) scale(.95);
+}
+.member-carousel div:nth-child(3) {
+    -webkit-transform: rotateY(90deg) translateZ(603.5px) scale(.95);
+}
+.member-carousel div:nth-child(4) {
+    -webkit-transform: rotateY(135deg) translateZ(603.5px) scale(.95);
+}
+.member-carousel div:nth-child(5) {
+    -webkit-transform: rotateY(180deg) translateZ(603.5px) scale(.95);
+}
+.member-carousel div:nth-child(6) {
+    -webkit-transform: rotateY(225deg) translateZ(603.5px) scale(.95);
+}
+.member-carousel div:nth-child(7) {
+    -webkit-transform: rotateY(270deg) translateZ(603.5px) scale(.95);
+}
+.member-carousel div:nth-child(8) {
+    -webkit-transform: rotateY(315deg) translateZ(603.5px) scale(.95);
+}
+
+/*------------------------------------------------------------------------------*/
+
+label {
+    display: inline-block;
+    width:40px;
+}
+label:hover {
+    background: rgba(203,203,203,0.5);
+}
+
+/*Spread the inputs out*/
+input {
+    position: relative !important;
+}
+
+/*Selects label element placed directly after the input element that is checked*/
+input:checked + label {
+    font-weight: bold;
+    background: rgba(203,203,203,0.5);
+}
+
+/*
+Below applies only the rotation of the carousel when the controls are clicked.
+Note it rotates the entire carousel class rather than individual div elements
+
+The tilde is the general sibling combinator. It combines two sequences of selectors.
+
+so
+
+    input[value=1]: checked ~ .container .carousel
+
+matches all .container .carousel elements that are siblings of input elements that have
+their value property equal to one and are checked.
+
+So essentially it selects the carousel, but rotation amount depends on which input
+element is currently checked.
+*/
+input[value="1"]:checked ~ .carousel-container .member-carousel {
+    -webkit-transform: translateZ(-603.5px);
+}
+input[value="2"]:checked ~ .carousel-container .member-carousel {
+    -webkit-transform: translateZ(-603.5px) rotateY(-45deg);
+}
+input[value="3"]:checked ~ .carousel-container .member-carousel {
+    -webkit-transform: translateZ(-603.5px) rotateY(-90deg);
+}
+input[value="4"]:checked ~ .carousel-container .member-carousel {
+    -webkit-transform: translateZ(-603.5px) rotateY(-135deg);
+}
+input[value="5"]:checked ~ .carousel-container .member-carousel {
+    -webkit-transform: translateZ(-603.5px) rotateY(-180deg);
+}
+input[value="6"]:checked ~ .carousel-container .member-carousel {
+    -webkit-transform: translateZ(-603.5px) rotateY(-225deg);
+}
+input[value="7"]:checked ~ .carousel-container .member-carousel {
+    -webkit-transform: translateZ(-603.5px) rotateY(-270deg);
+}
+input[value="8"]:checked ~ .carousel-container .member-carousel {
+    -webkit-transform: translateZ(-603.5px) rotateY(-315deg);
+}
+
+/*
+the selectors below apply to the indiviual div elements with the carousel when
+the input elements are clicked.
+
+Selector structure is very similar to above but acts on the nth div child rather
+than the entire carousels.
+
+These selectors enable the carousel element to "pop out" of the screen when they
+are the center focus of the carousel.
+
+Note that the individual element is also being rotated to offset the rotation
+by the entire carousel class, this is to ensure that the item rotates to the center
+point of the carousel rather than to the incorrect loaction
+*/
+
+input[value="1"]:checked ~ .carousel-container .member-carousel div:nth-child(1) {
+    -webkit-transform: translateZ(603.5px) scale(0.9);
+    opacity: 1;
+}
+input[value="2"]:checked ~ .carousel-container .member-carousel div:nth-child(2) {
+    -webkit-transform: rotateY(45deg) translateZ(603.5px) scale(0.9);
+    opacity: 1;
+}
+input[value="3"]:checked ~ .carousel-container .member-carousel div:nth-child(3) {
+    -webkit-transform: rotateY(90deg) translateZ(603.5px) scale(0.9);
+    opacity: 1;
+}
+input[value="4"]:checked ~ .carousel-container .member-carousel div:nth-child(4) {
+    -webkit-transform: rotateY(135deg) translateZ(603.5px) scale(0.9);
+    opacity: 1;
+}
+input[value="5"]:checked ~ .carousel-container .member-carousel div:nth-child(5) {
+    -webkit-transform: rotateY(180deg) translateZ(603.5px) scale(0.9);
+    opacity: 1;
+}
+input[value="6"]:checked ~ .carousel-container .member-carousel div:nth-child(6) {
+    -webkit-transform: rotateY(225deg) translateZ(603.5px) scale(0.9);
+    opacity: 1;
+}
+input[value="7"]:checked ~ .carousel-container .member-carousel div:nth-child(7) {
+    -webkit-transform: rotateY(270deg) translateZ(603.5px) scale(0.9);
+    opacity: 1;
+}
+input[value="8"]:checked ~ .carousel-container .member-carousel div:nth-child(8) {
+    -webkit-transform: rotateY(315deg) translateZ(603.5px) scale(0.9);
+    opacity: 1;
+}

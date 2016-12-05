@@ -1,0 +1,40 @@
+<!-- views/login.ejs -->
+<!doctype html>
+<html>
+<head>
+    <title>Serenity</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+    <style>
+        body        { padding-top:80px; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div class="col-sm-6 col-sm-offset-3">
+
+    <!-- show any messages that come back with authentication -->
+     <% if (errmessage.length > 0) { %>
+        <div class="alert alert-info"><%= errmessage %></div>
+    <% } %>
+    <% if (message.length > 0) { %>
+        <div class="alert alert-info"><%= message %></div>
+    <% } %>
+
+    <h1><span class="fa fa-sign-in"></span> Verify</h1>
+
+    <!-- LOGIN FORM -->
+    <form action="/verify" method="post">
+        <div class="form-group">
+            <label>Mobile Code</label>
+            <input type="text" class="form-control" name="mobileCode">
+        </div>
+        <button type="submit" class="btn btn-warning btn-lg">Verify</button>
+    </form>
+
+</div>
+
+</div>
+</body>
+</html>
